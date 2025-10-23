@@ -46,8 +46,9 @@ contract Hack {
     constructor(address target) public {
         fallout = IFalluot(target);
     }
-
+//just use hack
     function hack() public {
     fallout.Fal1out;
     }
+
 }
