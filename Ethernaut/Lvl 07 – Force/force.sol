@@ -14,5 +14,7 @@ contract Hack {
     receive()external payable  {}
 
     function send(address payable  _force) public payable {
-selfdestruct(_force);
+
+    selfdestruct(_force);
+
 }}
