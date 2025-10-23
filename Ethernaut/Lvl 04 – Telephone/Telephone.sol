@@ -20,8 +20,10 @@ contract TelephoneCaller {
     TelephoneI public _telephoneI;
             constructor(address  _contractAddress) {
     _telephoneI = TelephoneI(_contractAddress);
+
     }
     function call(address _newOwner)public  {
 _telephoneI.changeOwner(_newOwner);
     }
+
 }
