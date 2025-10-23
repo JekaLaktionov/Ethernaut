@@ -43,6 +43,7 @@ contract Hack {
         }
     }
 
+
     function withdraw() public payable {
         require(msg.sender == owner, "not owner");
         payable(owner).transfer(address(this).balance);
