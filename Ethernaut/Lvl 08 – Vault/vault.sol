@@ -5,6 +5,7 @@ contract Vault {
     bool public locked;
     bytes32 private password;
 
+
     constructor(bytes32 _password) {
         locked = true;
         password = _password;
@@ -15,4 +16,5 @@ contract Vault {
             locked = false;
         }
     }
+
 }
