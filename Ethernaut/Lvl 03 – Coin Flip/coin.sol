@@ -41,7 +41,7 @@ CoinI public _coinI;
 uint256 lastHash;
 uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
-
+//just use oracle
     function oracle() public returns (bool side) {
         uint256 blockValue = uint256(blockhash(block.number - 1));
 
@@ -55,3 +55,4 @@ uint256 FACTOR = 578960446186580977117854925043439539266349923328202820197287920
         _coinI.flip(side);
 }
 }
+
