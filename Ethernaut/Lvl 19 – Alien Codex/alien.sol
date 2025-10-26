@@ -112,7 +112,7 @@ IAllien public alien;
   return i;
     }
     
-  // owner in slot 1;
+  // owner in slot 1 ;
    function pwn(uint256 _slotNum) public {
     alien.makeContact();
     alien.retract();
