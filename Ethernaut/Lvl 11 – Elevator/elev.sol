@@ -9,7 +9,6 @@ contract Building {
 constructor(address _elevator){
     elevator = elevatorI (_elevator);
 }
-
       
     function isLastFloor(uint256 _flor) external  returns (bool){
       toggle = !toggle;
@@ -42,4 +41,5 @@ contract Elevator {
             top = building.isLastFloor(floor);
         }
     }
+
 }
