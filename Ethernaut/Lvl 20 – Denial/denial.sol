@@ -11,6 +11,7 @@ contract Denial {
         partner = _partner;
     }
 
+
     // withdraw 1% to recipient and 1% to owner
     function withdraw() public {
         uint256 amountToSend = address(this).balance / 100;
