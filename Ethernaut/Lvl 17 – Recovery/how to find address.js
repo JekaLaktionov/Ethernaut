@@ -8,7 +8,6 @@ function computeCreateAddress(creator, nonce) {
     
     const hashed = keccak256(encoded);
     const newAddress = getAddress('0x' + hashed.slice(-40));
-    
     return newAddress;
 }
 
@@ -17,3 +16,4 @@ const nonce = 1;
 const predictedAddress = computeCreateAddress(creatorAddress, nonce);
 
 console.log(predictedAddress);
+
