@@ -20,7 +20,6 @@ contract Privacy {
 
     /*
     A bunch of super advanced solidity algorithms...
-
       ,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`
       .,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,
       *.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^`*.,*'^         ,---/V\
@@ -33,4 +32,5 @@ contract Privacy {
    bytes16 data16 = bytes16(_data);
    return data16;
     }
+
  }
