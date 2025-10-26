@@ -8,7 +8,6 @@ contract GatekeeperTwo {
         require(msg.sender != tx.origin);
         _;
     }
-
     modifier gateTwo() {
         uint256 x;
         assembly {
