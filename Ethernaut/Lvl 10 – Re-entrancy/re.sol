@@ -19,6 +19,7 @@ contract Reentrance {
         }
     }
 
+
     receive() external payable {}
 }
 interface Ree {
